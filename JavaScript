@@ -1,1 +1,69 @@
-console.log("Nebula Journal starting soon!");
+// Nebula Journal - Core Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  // Load saved stars from previous session
+  loadGalaxy();
+  
+  // Set up event listeners
+  document.getElementById('saveBtn').addEventListener('click', saveThought);
+  document.getElementById('thoughtInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') saveThought();
+  });
+});
+
+// Constants
+const COLORS = ['#ff7eb9', '#7afcff', '#feff9c', '#fff740', '#a18aff'];
+
+function saveThought() {
+  const input = document.getElementById('thoughtInput');
+  const thought = input.value.trim();
+  
+  if (thought) {
+    createStar(thought);
+    saveToLocalStorage(thought);
+    input.value = '';
+    input.focus();
+  }
+}
+
+function createStar(text) {
+  const galaxy = document.getElementById('galaxy');
+  const star = document.createElement('div');
+  star.className = 'star';
+  star.title = text; // Shows text on hover
+  
+  // Visual properties based on content
+  const size = Math.min(30, Math.max(8, text.length / 2));
+  const hue = text.length % COLORS.length;
+  
+  star.style.width = `${size}px`;
+  star.style.height = `${size}px`;
+  star.style.background = COLORS[hue];
+  star.style.left = `${Math.random() * 85}%`;
+  star.style.top = `${Math.random() * 85}%`;
+  
+  // Animation
+  star.style.transform = 'scale(0)';
+  galaxy.appendChild(star);
+  setTimeout(() => star.style.transform = 'scale(1)', 10);
+  
+  // Click to reveal thought
+  star.addEventListener('click', () => {
+    alert(`Your thought: ${text}`);
+  });
+}
+
+function saveToLocalStorage(text) {
+  const stars = JSON.parse(localStorage.getItem('nebulaStars') || '[]');
+  stars.push({
+    text,
+    date: new Date().toLocaleString(),
+    x: Math.random() * 85,
+    y: Math.random() * 85
+  });
+  localStorage.setItem('nebulaStars', JSON.stringify(stars));
+}
+
+function loadGalaxy() {
+  const savedStars = JSON.parse(localStorage.getItem('nebulaStars') || '[]');
+  savedStars.forEach(star => createStar(star.text));
+}
