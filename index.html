@@ -3,10 +3,21 @@
 <head>
   <title>Nebula Journal</title>
   <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <h1>🌌 Nebula Journal</h1>
-  <p>Your cosmic diary coming soon!</p>
+  <div class="container">
+    <h1>🌌 Nebula Journal</h1>
+    <p>Turn your thoughts into stars</p>
+    
+    <div class="journal-area">
+      <textarea id="thoughtInput" placeholder="Write your secret thought..."></textarea>
+      <button onclick="saveThought()">Create Star</button>
+    </div>
+    
+    <div id="galaxy"></div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
