@@ -1,3 +1,13 @@
-# nebula-journal
-A cosmic diary that turns thoughts into encrypted constellations.
-Nebula Journal is a deeply personal digital diary designed to transform your innermost thoughts, dreams, and daily reflections into a breathtaking cosmic universe that exists solely for you.** The name "Nebula Journal" draws inspiration from both astronomy and mythology—a nebula is a celestial cloud of stardust where new stars are born, just as your thoughts and experiences become the raw material that forms your own private galaxy within this app. Every journal entry you create evolves into a unique star, planet, or nebula in your personal cosmos, with the visual characteristics (size, color, and brightness) reflecting the emotional tone and content of your writing. The app combines robust encryption with beautiful procedural generation to ensure your mental universe remains completely private yet visually stunning—like having a secret observatory for your soul. Unlike AI-powered journals that analyze your data, Nebula Journal takes a poetic, human-centered approach: your words don't train algorithms, they fuel constellations. The optional AR mode lets you literally surround yourself with your thoughts by projecting your nebula into your physical space, creating a meditative bridge between your inner and outer worlds. Designed for writers, artists, and anyone who values introspection, Nebula Journal turns the act of journaling into a ritual of cosmic creation—where instead of pages filling a book, you're cultivating a galaxy that grows more vibrant with every honest word you write.  
+# 🌠 Nebula Journal  
+*Turn your thoughts into a private galaxy*  
+
+## ✨ Features  
+- Write private journal entries  
+- See your words transform into **stars**  
+- Unlock with your **face/fingerprint**  
+
+## 🚀 How to Run  
+```bash
+git clone https://github.com/dinaabouelezz/nebula-journal.git
+npm install
+npm start
